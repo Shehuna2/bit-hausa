@@ -31,13 +31,16 @@ def PostList(request, tag_slug=None, category_slug=None):
 
     for post in page_obj:
         increase_post_views(post.id)
+    
+    unique_tags = Tag.objects.all().distinct()
 
     popular_posts = Post.objects.order_by('-views')[:5]
 
     context = {
-        'posts': page_obj,
         'tag': tag,
+        'posts': page_obj,
         'categories': categories,
+        'unique_tags': unique_tags,
         'popular_posts': popular_posts,
         'selected_category': category_slug,
     }
@@ -91,17 +94,6 @@ def ReplyComment(request):
             return redirect(post_url+'#'+str(reply.id))
     return redirect("/")        
 
-
-
-
-    # paginator = Paginator(posts, 2)
-    # page = request.GET.get('page')
-    # try:
-    #     posts = paginator.page(page)
-    # except PageNotAnInteger:
-    #     posts = paginator.page(1)
-    # except EmptyPage:
-    #     posts = paginator.page(paginator.num_pages)
 
 
 

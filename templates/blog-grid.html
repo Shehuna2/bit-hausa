@@ -159,10 +159,8 @@
                     <div class="blog-widget">
                         <h3 class="blog-widget-title">labarai masu dangantaka</h3>
                         <ul class="blog-widget-tag">
-                            {% for post in posts %}
-                            {% for tag in post.tag.all %}
+                            {% for tag in unique_tags %}
                             <li>#{{ tag.name }}</li>
-                            {% endfor %}
                             {% endfor %}
                         </ul>
                     </div>
