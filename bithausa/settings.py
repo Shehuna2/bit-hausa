@@ -16,10 +16,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
-# DEBUG = True
+# DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = True
 
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "hausacrypto.com").split(",")
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 
 
 
@@ -75,8 +75,8 @@ WSGI_APPLICATION = 'bithausa.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
-# DEVELOPMENT_MODE = True
+# DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+DEVELOPMENT_MODE = True
 
 if DEVELOPMENT_MODE is True:
     DATABASES = {
@@ -127,8 +127,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-# ...
-
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
@@ -140,8 +138,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 # Default primary key field type
