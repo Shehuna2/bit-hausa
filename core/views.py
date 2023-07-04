@@ -9,6 +9,9 @@ from .utils import increase_post_views
 
 from django.core.paginator import Paginator
 
+def TabPage(request):
+    return render(request, 'accord.html')
+
 def AboutPage(request):
     return render(request, 'about.html')
 

@@ -6,6 +6,7 @@ app_name = 'core'
 
 urlpatterns = [
     path('', views.PostList, name='home-index'),
+    path('tab/', views.TabPage, name='tab-page'),
     path('about/', views.AboutPage, name='about-page'),
     path('category/<slug:category_slug>/', views.PostList, name='post_category'),
     path('<slug:post>/', views.PostDetail, name='post-detail'),
