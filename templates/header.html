@@ -25,8 +25,8 @@
             <div class="col-md-7 col-lg-4">
                 <ul class="header-top-list">
                     <li><a href="{% url 'core:about-page' %}">Game da mu</a></li>
-                    <li><a href="faq.html">Tambaya/Amsa</a></li>
-                    <li><a href="/">Korafi/taimako</a></li>
+                    <li><a href="{% url 'core:coming-soon' %}">Tambaya/Amsa</a></li>
+                    <li><a href="{% url 'core:coming-soon' %}">Korafi/taimako</a></li>
                 </ul>
             </div>
         </div>
@@ -73,7 +73,7 @@
                 class="icofont-close"></i></button></div>
     <div class="nav-content">
         <div class="nav-btn">
-            <a href="login.html" class="btn btn-inline">
+            <a href="/" class="btn btn-inline">
                 </i><span>Hausa Crypto</span></a></div>
         <div class="nav-select-group">
             <div class="nav-select"><i class="icofont-world"></i>
@@ -94,9 +94,9 @@
         <ul class="nav-list">
             <li><a class="nav-link" href="/"><i class="icofont-home"></i>Gida</a>
             <li><a class="nav-link" href="{% url 'core:about-page' %}"><i class="icofont-info-circle"></i>Game damu</a></li>
-            <li><a class="nav-link" href="faq.html"><i class="icofont-support-faq"></i>Taimako</a></li>
-            <li><a class="nav-link" href="contact.html"><i class="icofont-contacts"></i>Tuntube Mu</a></li>
-            <li><a class="nav-link" href="privacy.html"><i class="icofont-warning"></i>Dokokin Hakki</a></li>
+            <li><a class="nav-link" href="{% url 'core:coming-soon' %}"><i class="icofont-support-faq"></i>Taimako</a></li>
+            <li><a class="nav-link" href="{% url 'core:coming-soon' %}"><i class="icofont-contacts"></i>Tuntube Mu</a></li>
+            <li><a class="nav-link" href="{% url 'core:coming-soon' %}"><i class="icofont-warning"></i>Dokokin Hakki</a></li>
         </ul>
         <div class="nav-info-group">
             <div class="nav-info"><i class="icofont-ui-touch-phone"></i>
