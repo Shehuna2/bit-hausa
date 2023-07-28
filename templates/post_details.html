@@ -17,9 +17,9 @@
                                     <li><i class="icofont-ui-calendar"></i><span>{{post.publish.date}}</span></li>
                                     <li><i class="icofont-user-alt-3"></i><span>{{post.author}}</span></li>
                                     <li><i class="fas fa-eye"></i><span>{{post.views}}</span></li>
-                                    <li><i class="icofont-speech-comments"></i><span>{{comments.count}} Martani</span></li>
+                                    <li><i class="icofont-speech-comments"></i><span>{{comments.count}} Comments</span></li>
                                 </ul>
-                                <ul class="blog-details-tag"> <h6>Bangaren: </h6>
+                                <ul class="blog-details-tag"> <h6>Tags: </h6>
                                     {% for tag in post.tag.all %}
                                     <li><i class="icofont-ui-hash"></i>
                                        <small>#{{tag.name}}</small>
@@ -36,11 +36,11 @@
 
                     <div class="blog-details-comment">
                         {% with comments.count as total_comments %}
-                            <h3 class="comment-title">{{ total_comments }} Martani</h3>
+                            <h3 class="comment-title">{{ total_comments }} Comments</h3>
                         {% endwith %} 
                         <ul class="comment-list">
                             {% if not post.comments.all %}
-                                <li class="comment-item">Babu martani a yanzu</li>
+                                <li class="comment-item">No comments yet!</li>
                             {% else %}
                                 {% for comment in post.comments.all %}
                                 <li class="comment-item">
@@ -81,21 +81,21 @@
                     <hr>
                     <form class="blog-details-form" method="post" action="">
                         {% csrf_token %}
-                        <h3 class="details-form-title">Fadi albarkacin bakinka</h3>
+                        <h3 class="details-form-title">Drop your Thought</h3>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="form-group">
-                                    <textarea class="form-control" name="body" placeholder="Kana da abun fada game da wannan labari...?"></textarea>
+                                    <textarea class="form-control" name="body" placeholder="Have something to say...?"></textarea>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" name="name" placeholder="Cikakken Sunan ka">
+                                    <input type="text" class="form-control" name="name" placeholder="Full name">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <input type="email" class="form-control" name="email" placeholder="adireshin ka na email">
+                                    <input type="email" class="form-control" name="email" placeholder="Your email">
                                 </div>
                             </div>
                         </div>
@@ -104,7 +104,7 @@
                     <hr>
                     <div class="blog-details-form">
                         <div class="blog-widget">
-                            <h3 class="blog-widget-title">Masu alaka da juna</h3>
+                            <h3 class="blog-widget-title">Related content:</h3>
                             <ul class="blog-widget-feed">
                                 {% for post in similar_posts %}
                                 <li><a class="blog-widget-media" href="{{ post.get_absolute_url }}"><img src="{{post.image.url}}" alt="blog-widget"></a>
