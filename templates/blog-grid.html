@@ -14,11 +14,11 @@
 			<div id="container-df5d9629e08146b576fcdd87d7cfe602"></div>
     <div class="container">
         {% if request.GET.q is not null %}
-        <h3>Labarai da suka shafi #{{ request.GET.q }}</h3>
+        <h3>Content related to: #{{ request.GET.q }}</h3>
         {% endif %}
 
         {% if selected_category %}
-        <h3>Labarai da suka shafi #{{ selected_category }}</h3>
+        <h3>Content related to: #{{ selected_category }}</h3>
         {% endif %}
     </div>
 
@@ -31,7 +31,7 @@
                             <div class="top-filter">
                                 <div class="filter-show">
                                     {% if posts.has_other_pages %}
-                                    <label class="filter-label">shafi na: {{ posts.start_index }} acikin shafuka </label>
+                                    <label class="filter-label">page: {{ posts.start_index }} of page </label>
                                     <select class="form-select filter-select">
                                         <option><a href="">{{ posts.paginator.count }}</a></option>
                                     </select>
@@ -67,7 +67,7 @@
                                     </ul>
                                     <h4 class="blog-title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h4>
                                     <p class="blog-desc">{{ post.body|safe|striptags|truncatechars:100 }}</p>
-                                    <a class="blog-btn transparent" href="{{ post.get_absolute_url }}"><span>Cigaba...</span><i class="icofont-arrow-right"></i></a>
+                                    <a class="blog-btn transparent" href="{{ post.get_absolute_url }}"><span>More...</span><i class="icofont-arrow-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
 
                 <div class="col-md-7 col-lg-4">
                     <div class="blog-widget">
-                        <h3 class="blog-widget-title">Binciko labarai</h3>
+                        <h3 class="blog-widget-title">Search content</h3>
                         <form class="blog-widget-form" action="/">
                             <input type="search" value="{{ request.GET.get }}" name="q" placeholder="Binciko labari">
                             <button class="icofont-search-1"></button>
@@ -120,7 +120,7 @@
                     </div>
                     
                     <div class="blog-widget">
-                        <h3 class="blog-widget-title">Shahararrun Labarai</h3>
+                        <h3 class="blog-widget-title">Popular contents</h3>
                         <ul class="blog-widget-feed">
                             {% for post in popular_posts %}
                             <li>
@@ -136,7 +136,7 @@
                     </div>
 
                     <div class="blog-widget">
-                        <h3 class="blog-widget-title">Sassan labarai</h3>
+                        <h3 class="blog-widget-title">Categories</h3>
                         <ul class="blog-widget-category">
                             {% for category in categories %}
                             {% if category.post_count > 0 %}
@@ -152,7 +152,7 @@
                     </div>
                     <div id="container-df5d9629e08146b576fcdd87d7cfe602"></div>
                     <div class="blog-widget">
-                        <h3 class="blog-widget-title">labarai masu dangantaka</h3>
+                        <h3 class="blog-widget-title">Tags:</h3>
                         <ul class="blog-widget-tag">
                             {% for tag in unique_tags %}
                             <li>#{{ tag.name }}</li>
@@ -161,7 +161,7 @@
                     </div>
 
                     <div class="blog-widget">
-                        <h3 class="blog-widget-title">ku biyo mu a shafukan mu</h3>
+                        <h3 class="blog-widget-title">Follow us</h3>
                         <ul class="blog-widget-social">
                             <li><a href="#" class="icofont-facebook"></a></li>
                             <li><a href="https://twitter.com/Hausa_Crytpo?t=pb8kD9EM3EJYPBn3G7cR-g&s=09" class="icofont-twitter"></a></li>
@@ -185,12 +185,12 @@
             <div class="row align-items-center">
                 <div class="col-md-5 col-lg-6 col-xl-7">
                     <div class="news-text">
-                        <h2>Domin samu labaranmu kai tsaye</h2>
+                        <h2>Subscribe</h2>
                     </div>
                 </div>
                 <div class="col-md-7 col-lg-6 col-xl-5">
                     <form class="news-form">
-                        <input type="text" placeholder="Shigar da adireshin ka na email">
+                        <input type="text" placeholder="Never miss our update">
                         <button>
                             <span><i class="icofont-ui-email"></i>Shiga</span>
                         </button>
